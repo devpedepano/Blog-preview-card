@@ -1,44 +1,150 @@
-<!DOCTYPE html>
-<html lang="en">
+/* RESET SYLING */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "figtree";
+  cursor: default;
+}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- displays site properly based on user's device -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles/style.css" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+html {
+  --yelow: #f4d04e;
+  --gray-500: #6b6b6b;
+  --gray-950: #111111;
+  --white: #ffffff;
+}
 
-  <title>Frontend Mentor | Blog preview card</title>
-</head>
+/* BODY */
 
-<body>
+body {
+  background-color: var(--yelow);
+}
 
-  <main>
+/* MAIN */
 
-    <div class="post-container">
-      <section class="post-image-section">
-        <img class="post-image" src="./assets/images/illustration-article.svg"></img>
-      </section>
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vb;
+}
+/* POST CONTAINER */
 
-      <section class="post-section">
-        <h3 class="post-category">Learning</h3>
-        <p class="post-publish-date">Published 21 Dec 2023 </p>
-        <h1 class="post-content-title">HTML & CSS foundations</h1>
-        <p class="post-content-paragraph">These languages are the backbone of every website, defining structure,
-          content, and presentation.</p>
-      </section>
+.post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white);
+  width: 384px;
+  height: 522px;
+  border-radius: 20px;
+  border: 1px solid var(--gray-950);
+  box-shadow: 8px 8px;
+}
 
-      <section class="post-user-section">
-        <img class="user-img" src='https://avatars.githubusercontent.com/u/183246065?v=4&size=64'></img>
-        <h6 class="user-name">Dev Pedepano</h6>
-      </section>
-    </div>
+.post-image-section {
+  padding: 24px;
+}
 
-  </main>
+.post-image {
+  width: 336px;
+  border-radius: 15px;
+}
 
-</body>
+/* POST SECTION */
 
-</html>
+.post-section {
+  display: flex;
+  flex-direction: column;
+  width: 336px;
+  row-gap: 7px;
+}
+
+.post-category {
+  background-color: var(--yelow);
+  padding: 7px 14px;
+  border-radius: 5px;
+  width: min-content;
+  font-size: 14px;
+}
+
+.post-publish-date {
+  padding-bottom: 7px;
+}
+
+.post-content-title {
+  transition: all 0.3s;
+}
+
+.post-content-title:hover {
+  color: var(--yelow);
+  cursor: pointer;
+}
+
+.post-content-paragraph {
+  color: var(--gray-500);
+  padding-bottom: 14px;
+}
+
+/* POST USER */
+
+.post-user-section {
+  margin-top: 7px;
+  margin-left: 23px;
+  height: 32px;
+  width: 120px;
+  display: flex;
+  align-self: start;
+  margin-top: 23px;
+  justify-content: space-between;
+}
+
+.user-img {
+  border-radius: 50%;
+}
+
+.user-name {
+  align-self: center;
+  font-size: 12px;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 834px) {
+  .post-container {
+    width: 327px;
+    height: 501px;
+  }
+
+  .post-image {
+    width: 279px;
+  }
+
+  .post-section {
+    width: 279px;
+  }
+
+  .post-publish-category {
+    height: 26px;
+    width: 73px;
+    font-size: 12px;
+  }
+
+  .post-publish-date {
+    width: 123px;
+    height: 18px;
+    font-size: 12px;
+    padding: 12px 0px;
+  }
+
+  .post-content-title {
+    font-size: 20px;
+    padding: 12px 0px;
+  }
+
+  .post-content-paragraph {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+}
